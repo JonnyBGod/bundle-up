@@ -15,6 +15,13 @@ class Js extends Bundle
       if file.namespace == namespace
         js += "<script src='#{file.url}' type='text/javascript'></script>"
     js
+  
+  list: (namespace) ->
+    js = ""
+    for file in @files
+      if file.namespace == namespace
+        js += "'#{file.url}', "
+    js
 
   _convertFilename: (filename) ->
     splitted = filename.split('.')
