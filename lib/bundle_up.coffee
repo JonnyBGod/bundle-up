@@ -35,6 +35,10 @@ class BundleUp
         return @css.render(namespace)
       renderJs: (namespace=@js.defaultNamespace) =>
         return @js.render(namespace)
+      listStyles: (namespace=@css.defaultNamespace) =>
+        return @css.list(namespace)
+      listJs: (namespace=@js.defaultNamespace) =>
+        return @js.list(namespace)
     )
 
 module.exports = (app, assetPath, options)->
