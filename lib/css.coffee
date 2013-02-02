@@ -16,6 +16,13 @@ class Css extends Bundle
       if file.namespace == namespace
         style += "<link href='#{file.url}' rel='stylesheet' type='text/css'/>"
     return style
+    
+  list: (namespace) ->
+    style = ''
+    for file in @files
+      if file.namespace == namespace
+        style += "'#{file.url}', "
+    return style
 
   _convertFilename: (filename) ->
     splitted = filename.split('.')
