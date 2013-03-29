@@ -21,6 +21,7 @@ class Js extends Bundle
     for file in @files
       if file.namespace == namespace
         js += "'#{file.url}', "
+    js = js.substring(0, js.length - 2)
     js
 
   _convertFilename: (filename) ->
