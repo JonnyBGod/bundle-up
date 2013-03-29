@@ -22,6 +22,7 @@ class Css extends Bundle
     for file in @files
       if file.namespace == namespace
         style += "'#{file.url}', "
+    style = style.substring(0, style.length - 2)
     return style
 
   _convertFilename: (filename) ->
